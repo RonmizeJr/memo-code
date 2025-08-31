@@ -16,7 +16,7 @@ export default function Footer() {
             Terms of Service
           </Link>
           <Link
-            href="https://github.com/your-username/your-repo"
+            href="https://github.com/RonmizeJr/memo-code"
             className="hover:text-primary"
           >
             GitHub

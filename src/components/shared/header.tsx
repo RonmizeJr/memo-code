@@ -5,11 +5,21 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
+  useAuth,
   UserButton,
 } from "@clerk/nextjs";
 import { Button } from "~/components/ui/button";
+import { redirect, useRouter } from "next/navigation";
 
 export default function Header() {
+  const user = useAuth();
+  const router = useRouter();
+
+  if (!user) {
+    redirect("/");
+  } else {
+    router.push("");
+  }
   return (
     <nav className="bg-background/80 sticky top-0 z-50 border-b px-4 py-3 backdrop-blur-sm md:px-8 lg:px-12">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
